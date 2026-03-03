@@ -1,70 +1,130 @@
-# Getting Started with Create React App
+# Apna Video Calling App 🎥📞
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A real-time video calling application with chat functionality, built using Node.js, Express, Socket.IO, MongoDB, and WebRTC.
 
-## Available Scripts
+## ✨ Features
 
-In the project directory, you can run:
+- 🔐 User Authentication (Register/Login)
+- 📹 Real-time Video Calling
+- 💬 In-call Chat Messaging
+- 📊 Meeting History Tracking
+- 🏠 Room-based Video Conferencing
+- 🔒 Secure Token-based Authentication
 
-### `npm start`
+## 🛠️ Tech Stack
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+### Backend
+- **Node.js** - Runtime environment
+- **Express.js** - Web framework
+- **Socket.IO** - Real-time communication
+- **MongoDB** - Database
+- **Mongoose** - ODM
+- **bcrypt** - Password hashing
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### Frontend
+- **React.js** - UI library
+- **Socket.IO Client** - Real-time client
+- **WebRTC** - Peer-to-peer video/audio
 
-### `npm test`
+## 📦 Installation & Setup
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Prerequisites
+- Node.js (v16 or higher)
+- MongoDB Atlas account
+- npm or yarn
 
-### `npm run build`
+### Backend Setup
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+1. Navigate to backend folder:
+```bash
+cd backend
+```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+2. Install dependencies:
+```bash
+npm install
+```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+3. Create `.env` file in backend folder:
+```env
+PORT=8000
+MONGO_URI=your_mongodb_connection_string
+NODE_ENV=development
+```
 
-### `npm run eject`
+4. Start backend server:
+```bash
+npm run dev
+```
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+Server will run on `http://localhost:8000`
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### Frontend Setup
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+1. Navigate to frontend folder:
+```bash
+cd frontend
+```
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+2. Install dependencies:
+```bash
+npm install
+```
 
-## Learn More
+3. Start frontend:
+```bash
+npm start
+```
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+Frontend will run on `http://localhost:5173` (Vite) or `http://localhost:3000` (CRA)
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## 🌐 API Endpoints
 
-### Code Splitting
+### Authentication
+- `POST /api/v1/users/register` - Register new user
+- `POST /api/v1/users/login` - Login user
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+### Meeting History
+- `GET /api/v1/users/get_all_activity?token=USER_TOKEN` - Get user's meeting history
+- `POST /api/v1/users/add_to_activity` - Add meeting to history
 
-### Analyzing the Bundle Size
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
 
-### Making a Progressive Web App
+## 🔌 Socket.IO Events
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+### Client to Server
+- `join-call` - Join a video call room
+- `signal` - WebRTC signaling
+- `chat-message` - Send chat message
+- `leave-call` - Leave the call
+- `disconnect` - User disconnected
 
-### Advanced Configuration
+### Server to Client
+- `user-joined` - New user joined the room
+- `user-left` - User left the room
+- `chat-message` - Receive chat message
+- `signal` - WebRTC signaling response
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+## 🚀 Deployment
 
-### Deployment
+### Backend (Render)
+1. Push code to GitHub
+2. Connect repository to hosting platform
+3. Set environment variables
+4. Deploy
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+### Frontend (Render)
+1. Build frontend: `npm run build`
+2. Deploy `dist` or `build` folder
+3. Update API endpoints to production URL
 
-### `npm run build` fails to minify
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## 🙏 Acknowledgments
+
+- Socket.IO for real-time communication
+- WebRTC for peer-to-peer video
+- MongoDB Atlas for database hosting
+
+---
+
+⭐ If you like this project, please give it a star on GitHub!
